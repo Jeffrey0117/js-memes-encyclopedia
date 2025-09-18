@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Memes & Quotes Encyclopedia</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <h1 class="logo">
+                <span class="js-logo">JS</span>
+                <span class="title">Memes & Quotes Encyclopedia</span>
+            </h1>
+            <nav class="nav">
+                <a href="#memes" class="nav-link">Memes</a>
+                <a href="#quotes" class="nav-link">Quotes</a>
+                <a href="#docs" class="nav-link">Docs</a>
+                <a href="#about" class="nav-link">About</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <div class="container">
+                <h2 class="hero-title">探索JavaScript的奇妙世界</h2>
+                <p class="hero-subtitle">收集最經典的JavaScript memes、名人名言，以及深入的技術解釋</p>
+                <div class="search-container">
+                    <input type="text" id="searchInput" class="search-input" placeholder="搜索memes、quotes或技術概念...">
+                    <button class="search-button">🔍</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="memes" class="section">
+            <div class="container">
+                <h2 class="section-title">🎭 經典Memes</h2>
+                <div class="grid" id="memesGrid">
+                    <div class="card meme-card" data-category="meme" data-keywords="wat type coercion">
+                        <h3 class="card-title">Wat - 類型轉換的奇蹟</h3>
+                        <div class="code-preview">
+                            <code>[] + [] // ""</code><br>
+                            <code>{} + [] // 0</code>
+                        </div>
+                        <p class="card-description">JavaScript類型轉換的經典案例，展現了令人困惑但有邏輯的行為。</p>
+                        <a href="#" class="card-link" onclick="loadContent('memes/wat-meme.md')">閱讀更多 →</a>
+                    </div>
+
+                    <div class="card meme-card" data-category="meme" data-keywords="this fine equality">
+                        <h3 class="card-title">This is Fine - 加法函數的混亂</h3>
+                        <div class="code-preview">
+                            <code>add("1", "2") // "12"</code><br>
+                            <code>add([], {}) // "[object Object]"</code>
+                        </div>
+                        <p class="card-description">一個簡單的加法函數如何因為類型轉換而產生意想不到的結果。</p>
+                        <a href="#" class="card-link" onclick="loadContent('memes/this-is-fine-meme.md')">閱讀更多 →</a>
+                    </div>
+
+                    <div class="card meme-card" data-category="meme" data-keywords="equality comparison ==">
+                        <h3 class="card-title">相等性比較的奇異世界</h3>
+                        <div class="code-preview">
+                            <code>0 == false // true</code><br>
+                            <code>0.1 + 0.2 == 0.3 // false</code>
+                        </div>
+                        <p class="card-description">探索JavaScript中==和===的差異，以及浮點數精度問題。</p>
+                        <a href="#" class="card-link" onclick="loadContent('memes/equality-meme.md')">閱讀更多 →</a>
+                    </div>
+
+                    <div class="card meme-card" data-category="meme" data-keywords="hoisting var let const">
+                        <h3 class="card-title">變數提升 - 時間旅行者的噩夢</h3>
+                        <div class="code-preview">
+                            <code>console.log(x); // undefined</code><br>
+                            <code>var x = 5;</code>
+                        </div>
+                        <p class="card-description">JavaScript的變數提升機制如何讓程式碼看起來像時間旅行。</p>
+                        <a href="#" class="card-link" onclick="loadContent('memes/hoisting-meme.md')">閱讀更多 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="quotes" class="section">
+            <div class="container">
+                <h2 class="section-title">💬 名人語錄</h2>
+                <div class="grid" id="quotesGrid">
+                    <div class="card quote-card" data-category="quote" data-keywords="brendan eich learn">
+                        <blockquote class="quote-text">
+                            "JavaScript is the only language that people feel they don't need to learn before they start using it."
+                        </blockquote>
+                        <cite class="quote-author">— Brendan Eich</cite>
+                        <p class="card-description">JavaScript創造者對這門語言被誤解的深刻觀察。</p>
+                        <a href="#" class="card-link" onclick="loadContent('quotes/brenndan-eich.md')">了解背景 →</a>
+                    </div>
+
+                    <div class="card quote-card" data-category="quote" data-keywords="douglas crockford misunderstood">
+                        <blockquote class="quote-text">
+                            "JavaScript is the world's most misunderstood programming language."
+                        </blockquote>
+                        <cite class="quote-author">— Douglas Crockford</cite>
+                        <p class="card-description">JSON發明者和《JavaScript: The Good Parts》作者的經典觀點。</p>
+                        <a href="#" class="card-link" onclick="loadContent('quotes/douglas-crockford.md')">了解背景 →</a>
+                    </div>
+
+                    <div class="card quote-card" data-category="quote" data-keywords="kyle simpson you dont know">
+                        <blockquote class="quote-text">
+                            "You Don't Know JS"
+                        </blockquote>
+                        <cite class="quote-author">— Kyle Simpson</cite>
+                        <p class="card-description">深入理解JavaScript核心概念的重要性。</p>
+                        <a href="#" class="card-link" onclick="loadContent('quotes/kyle-simpson.md')">了解背景 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="docs" class="section">
+            <div class="container">
+                <h2 class="section-title">📚 技術文檔</h2>
+                <div class="grid" id="docsGrid">
+                    <div class="card doc-card" data-category="doc" data-keywords="type coercion conversion">
+                        <h3 class="card-title">類型轉換 (Type Coercion)</h3>
+                        <p class="card-description">深入理解JavaScript的自動類型轉換機制，包括常見陷阱和最佳實踐。</p>
+                        <div class="tag-list">
+                            <span class="tag">基礎概念</span>
+                            <span class="tag">常見陷阱</span>
+                        </div>
+                        <a href="#" class="card-link" onclick="loadContent('docs/type-coercion.md')">閱讀文檔 →</a>
+                    </div>
+
+                    <div class="card doc-card" data-category="doc" data-keywords="closures scope lexical">
+                        <h3 class="card-title">閉包 (Closures)</h3>
+                        <p class="card-description">掌握JavaScript最強大的特性之一，從基礎概念到實際應用。</p>
+                        <div class="tag-list">
+                            <span class="tag">進階概念</span>
+                            <span class="tag">函數式程式設計</span>
+                        </div>
+                        <a href="#" class="card-link" onclick="loadContent('docs/closures.md')">閱讀文檔 →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title">📖 關於專案</h2>
+                <div class="about-content">
+                    <p>這個專案收集了JavaScript社群中最經典的memes、最有影響力的名人語錄，以及最重要的技術概念解釋。我們的目標是：</p>
+                    <ul>
+                        <li>幫助開發者更好地理解JavaScript的奇妙行為</li>
+                        <li>通過幽默的方式學習複雜的技術概念</li>
+                        <li>保存JavaScript社群的文化和智慧</li>
+                        <li>提供準確且深入的技術解釋</li>
+                    </ul>
+                    <p>如果您想貢獻內容，歡迎提交pull request！</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 JavaScript Memes & Quotes Encyclopedia. 用 ❤️ 和 JavaScript 製作。</p>
+            <p>
+                <a href="https://github.com/yourproject/js-memes-encyclopedia" target="_blank">GitHub</a> |
+                <a href="#" onclick="showContributeModal()">貢獻內容</a>
+            </p>
+        </div>
+    </footer>
+
+    <!-- 內容顯示模態框 -->
+    <div id="contentModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modalBody" class="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
