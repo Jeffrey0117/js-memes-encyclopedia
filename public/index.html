@@ -107,6 +107,16 @@
                         <p class="card-description">JavaScript的變數提升機制如何讓程式碼看起來像時間旅行。</p>
                         <a href="#" class="card-link" onclick="loadContent('memes/hoisting-meme.md')">閱讀更多 →</a>
                     </div>
+
+                    <div class="card meme-card" data-category="meme" data-keywords="this binding context call apply">
+                        <h3 class="card-title">This綁定 - 我是誰？</h3>
+                        <div class="code-preview">
+                            <code>const func = obj.method;</code><br>
+                            <code>func(); // this 是誰？</code>
+                        </div>
+                        <p class="card-description">JavaScript中最令人困惑的this綁定規則，讓你懷疑人生。</p>
+                        <a href="#" class="card-link" onclick="loadContent('memes/this-binding-meme.md')">閱讀更多 →</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -167,6 +177,36 @@
                             <span class="tag">函數式程式設計</span>
                         </div>
                         <a href="#" class="card-link" onclick="loadContent('docs/closures.md')">閱讀文檔 →</a>
+                    </div>
+
+                    <div class="card doc-card" data-category="doc" data-keywords="async await promise asynchronous">
+                        <h3 class="card-title">Async/Await</h3>
+                        <p class="card-description">現代異步編程的最佳實踐，讓異步代碼看起來像同步代碼。</p>
+                        <div class="tag-list">
+                            <span class="tag">ES2017</span>
+                            <span class="tag">異步編程</span>
+                        </div>
+                        <a href="#" class="card-link" onclick="loadContent('docs/async-await.md')">閱讀文檔 →</a>
+                    </div>
+
+                    <div class="card doc-card" data-category="doc" data-keywords="prototype chain inheritance __proto__">
+                        <h3 class="card-title">原型鏈 (Prototype Chain)</h3>
+                        <p class="card-description">理解JavaScript繼承的核心機制，掌握原型和原型鏈的工作原理。</p>
+                        <div class="tag-list">
+                            <span class="tag">OOP</span>
+                            <span class="tag">繼承機制</span>
+                        </div>
+                        <a href="#" class="card-link" onclick="loadContent('docs/prototype-chain.md')">閱讀文檔 →</a>
+                    </div>
+
+                    <div class="card doc-card" data-category="doc" data-keywords="event loop microtask macrotask">
+                        <h3 class="card-title">Event Loop</h3>
+                        <p class="card-description">JavaScript的心跳機制，理解異步操作和任務調度的核心原理。</p>
+                        <div class="tag-list">
+                            <span class="tag">異步機制</span>
+                            <span class="tag">性能優化</span>
+                        </div>
+                        <a href="#" class="card-link" onclick="loadContent('docs/event-loop.md')">閱讀文檔 →</a>
                     </div>
 
                     <div class="card doc-card" data-category="interactive" data-keywords="code executor playground">

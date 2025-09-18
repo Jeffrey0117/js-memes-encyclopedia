@@ -68,6 +68,7 @@ testFileStructure.test('檢查memes目錄結構', () => {
     testFileStructure.assert(fs.existsSync('memes/this-is-fine-meme.md'), 'this-is-fine-meme.md 不存在');
     testFileStructure.assert(fs.existsSync('memes/equality-meme.md'), 'equality-meme.md 不存在');
     testFileStructure.assert(fs.existsSync('memes/hoisting-meme.md'), 'hoisting-meme.md 不存在');
+    testFileStructure.assert(fs.existsSync('memes/this-binding-meme.md'), 'this-binding-meme.md 不存在');
 });
 
 testFileStructure.test('檢查quotes目錄結構', () => {
@@ -83,6 +84,9 @@ testFileStructure.test('檢查docs目錄結構', () => {
     testFileStructure.assert(fs.existsSync('docs'), 'docs 目錄不存在');
     testFileStructure.assert(fs.existsSync('docs/type-coercion.md'), 'type-coercion.md 不存在');
     testFileStructure.assert(fs.existsSync('docs/closures.md'), 'closures.md 不存在');
+    testFileStructure.assert(fs.existsSync('docs/async-await.md'), 'async-await.md 不存在');
+    testFileStructure.assert(fs.existsSync('docs/prototype-chain.md'), 'prototype-chain.md 不存在');
+    testFileStructure.assert(fs.existsSync('docs/event-loop.md'), 'event-loop.md 不存在');
 });
 
 testFileStructure.test('檢查public目錄結構', () => {
