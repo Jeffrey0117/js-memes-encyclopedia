@@ -106,72 +106,36 @@ async function loadContent(filePath) {
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden';
 
-        // 模擬載入markdown內容
-        const content = await simulateMarkdownLoad(filePath);
+        // 使用真實的markdown載入器
+        const content = await window.markdownLoader.loadMarkdown(filePath);
         modalBody.innerHTML = content;
         
         // 添加程式碼高亮
         highlightCode();
         
+        // 記錄載入成功
+        console.log(`🟢 內容載入成功: ${filePath}`);
+        
     } catch (error) {
+        console.error(`🔴 內容載入失敗: ${filePath}`, error);
         modalBody.innerHTML = `
             <div class="error-message">
                 <h2>載入失敗</h2>
                 <p>無法載入內容：${filePath}</p>
                 <p>錯誤：${error.message}</p>
+                <button onclick="loadContent('${filePath}')" style="margin-top: 1rem;">重試</button>
             </div>
         `;
     }
 }
 
-// 模擬載入markdown內容（實際專案中會從伺服器載入）
-async function simulateMarkdownLoad(filePath) {
-    // 模擬網路延遲
-    await new Promise(resolve => setTimeout(resolve, 500));
-
-    const contentMap = {
-        'memes/wat-meme.md': `
-            <h1>Wat - The Infamous JavaScript Meme</h1>
-            <p>這個經典的meme展示了JavaScript類型轉換的奇特行為。</p>
-            <h2>程式碼範例</h2>
-            <pre><code>console.log([] + []);           // ""
-console.log([] + {});           // "[object Object]"
-console.log({} + []);           // 0
-console.log({} + {});           // [object Object][object Object]</code></pre>
-            <h2>解釋</h2>
-            <p>這些結果展現了JavaScript自動類型轉換的複雜規則...</p>
-        `,
-        'memes/this-is-fine-meme.md': `
-            <h1>"This is Fine" - JavaScript Edition</h1>
-            <p>當你的加法函數遇到JavaScript的類型轉換時...</p>
-            <h2>問題程式碼</h2>
-            <pre><code>function add(a, b) {
-    return a + b;
-}
-console.log(add("1", "2"));       // "12"
-console.log(add([], {}));         // "[object Object]"</code></pre>
-        `,
-        'quotes/brenndan-eich.md': `
-            <h1>Brendan Eich 的深刻洞察</h1>
-            <blockquote>"JavaScript is the only language that people feel they don't need to learn before they start using it."</blockquote>
-            <p>作為JavaScript的創造者，Brendan Eich對這門語言的觀察...</p>
-        `,
-        'docs/type-coercion.md': `
-            <h1>理解JavaScript類型轉換</h1>
-            <p>類型轉換是JavaScript中最重要也最容易出錯的概念之一。</p>
-            <h2>基本規則</h2>
-            <ul>
-                <li>字串優先：當操作數中有字串時，+ 運算子會進行字串連接</li>
-                <li>布林轉換：true 變成 1，false 變成 0</li>
-                <li>物件轉換：物件會先調用 valueOf() 再調用 toString()</li>
-            </ul>
-        `
-    };
-
-    return contentMap[filePath] || `
-        <h1>內容載入中</h1>
-        <p>正在載入：${filePath}</p>
-        <p>這是一個示範版本，實際部署時會載入真實的markdown內容。</p>
+// 添加載入狀態指示器
+function showLoadingIndicator(message = '載入中...') {
+    return `
+        <div class="loading-container" style="text-align: center; padding: 2rem;">
+            <div class="loading"></div>
+            <p style="margin-top: 1rem; color: var(--color-text-muted);">${message}</p>
+        </div>
     `;
 }
 

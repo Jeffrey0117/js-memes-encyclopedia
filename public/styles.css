@@ -445,7 +445,7 @@ a:hover {
     padding: 0;
 }
 
-/* 響應式設計 */
+/* 響應式設計 responsive design */
 @media (max-width: 768px) {
     .header .container {
         flex-direction: column;

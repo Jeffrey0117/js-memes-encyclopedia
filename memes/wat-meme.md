@@ -12,7 +12,7 @@ console.log([] - {});           // NaN
 console.log({} - []);           // NaN
 ```
 
-## Explanation
+## 解釋
 
 This meme highlights some of JavaScript's type coercion quirks:
 
