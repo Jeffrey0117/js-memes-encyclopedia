@@ -3,7 +3,36 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JavaScript Memes & Quotes Encyclopedia</title>
+    <title>JavaScript Memes & Quotes Encyclopedia - 有趣的程式語言學習</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="探索JavaScript的有趣世界！收集經典memes、名人引用和技術解釋，讓程式學習更有趣。包含互動程式碼執行器。">
+    <meta name="keywords" content="JavaScript, memes, quotes, programming, 程式設計, coding, web development, 學習資源">
+    <meta name="author" content="JavaScript Memes Encyclopedia">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph / Social Media Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="JavaScript Memes & Quotes Encyclopedia">
+    <meta property="og:description" content="探索JavaScript的有趣世界！收集經典memes、名人引用和技術解釋">
+    <meta property="og:url" content="https://js-memes-encyclopedia.github.io/">
+    <meta property="og:site_name" content="JavaScript Memes Encyclopedia">
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="JavaScript Memes & Quotes Encyclopedia">
+    <meta name="twitter:description" content="探索JavaScript的有趣世界！收集經典memes、名人引用和技術解釋">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>😂</text></svg>">
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    
+    <!-- DNS Prefetch for External Resources -->
+    <link rel="dns-prefetch" href="//fonts.googleapis.com">
+    
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@300;400;500&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
@@ -191,8 +220,26 @@
         </div>
     </div>
 
-    <script src="markdown-loader.js"></script>
-    <script src="code-executor.js"></script>
-    <script src="script.js"></script>
+    <!-- Load Scripts Asynchronously -->
+    <script src="markdown-loader.js" defer></script>
+    <script src="code-executor.js" defer></script>
+    <script src="script.js" defer></script>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "JavaScript Memes & Quotes Encyclopedia",
+        "description": "探索JavaScript的有趣世界！收集經典memes、名人引用和技術解釋",
+        "url": "https://js-memes-encyclopedia.github.io/",
+        "inLanguage": "zh-TW",
+        "keywords": "JavaScript, programming, memes, quotes, web development",
+        "creator": {
+            "@type": "Organization",
+            "name": "JavaScript Memes Encyclopedia"
+        }
+    }
+    </script>
 </body>
 </html>
