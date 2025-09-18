@@ -328,3 +328,34 @@ console.log(`
 // 顯示統計信息
 const stats = updateStats();
 console.log(`📊 目前收錄：${stats.memes} 個memes，${stats.quotes} 個quotes，${stats.docs} 個技術文檔`);
+
+// 程式碼執行器功能
+let codeEditor = null;
+
+function showCodeEditor() {
+    const container = document.getElementById('codeEditorContainer');
+    
+    if (!codeEditor) {
+        container.style.display = 'block';
+        codeEditor = new CodeEditor('codeEditorContainer');
+        
+        // 滾動到程式碼執行器
+        container.scrollIntoView({ 
+            behavior: 'smooth', 
+            block: 'start' 
+        });
+        
+        console.log('🧪 程式碼執行器已啟動');
+    } else {
+        // 如果已經存在，只是顯示/隱藏
+        const isVisible = container.style.display !== 'none';
+        container.style.display = isVisible ? 'none' : 'block';
+        
+        if (!isVisible) {
+            container.scrollIntoView({ 
+                behavior: 'smooth', 
+                block: 'start' 
+            });
+        }
+    }
+}

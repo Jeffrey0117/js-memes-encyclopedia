@@ -139,7 +139,20 @@
                         </div>
                         <a href="#" class="card-link" onclick="loadContent('docs/closures.md')">閱讀文檔 →</a>
                     </div>
+
+                    <div class="card doc-card" data-category="interactive" data-keywords="code executor playground">
+                        <h3 class="card-title">🧪 程式碼實驗室</h3>
+                        <p class="card-description">互動式JavaScript程式碼執行器，安全地測試程式碼範例和探索語言特性。</p>
+                        <div class="tag-list">
+                            <span class="tag">互動功能</span>
+                            <span class="tag">程式碼測試</span>
+                        </div>
+                        <a href="#" class="card-link" onclick="showCodeEditor()">開啟實驗室 →</a>
+                    </div>
                 </div>
+
+                <!-- 程式碼執行器 -->
+                <div id="codeEditorContainer" style="display: none;"></div>
             </div>
         </section>
 
@@ -179,6 +192,7 @@
     </div>
 
     <script src="markdown-loader.js"></script>
+    <script src="code-executor.js"></script>
     <script src="script.js"></script>
 </body>
 </html>

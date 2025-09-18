@@ -92,6 +92,7 @@ testFileStructure.test('檢查public目錄結構', () => {
     testFileStructure.assert(fs.existsSync('public/styles.css'), 'styles.css 不存在');
     testFileStructure.assert(fs.existsSync('public/script.js'), 'script.js 不存在');
     testFileStructure.assert(fs.existsSync('public/markdown-loader.js'), 'markdown-loader.js 不存在');
+    testFileStructure.assert(fs.existsSync('public/code-executor.js'), 'code-executor.js 不存在');
 });
 
 // 內容品質測試
@@ -155,6 +156,26 @@ testWebsiteFeatures.test('檢查動態載入功能', () => {
     const js = fs.readFileSync('public/script.js', 'utf8');
     testWebsiteFeatures.assertContains(js, 'window.markdownLoader', 'JS未使用markdownLoader');
     testWebsiteFeatures.assertContains(js, 'loadMarkdown', 'JS缺少loadMarkdown調用');
+});
+
+testWebsiteFeatures.test('檢查程式碼執行器', () => {
+    const fs = require('fs');
+    testWebsiteFeatures.assert(fs.existsSync('public/code-executor.js'), 'code-executor.js不存在');
+    const executor = fs.readFileSync('public/code-executor.js', 'utf8');
+    testWebsiteFeatures.assertContains(executor, 'class CodeExecutor', 'JS缺少CodeExecutor類');
+    testWebsiteFeatures.assertContains(executor, 'executeCode', 'JS缺少executeCode方法');
+});
+
+testWebsiteFeatures.test('檢查HTML整合程式碼執行器', () => {
+    const fs = require('fs');
+    const html = fs.readFileSync('public/index.html', 'utf8');
+    testWebsiteFeatures.assertContains(html, 'code-executor.js', 'HTML未引入code-executor.js');
+});
+
+testWebsiteFeatures.test('檢查程式碼執行器功能', () => {
+    const fs = require('fs');
+    const js = fs.readFileSync('public/script.js', 'utf8');
+    testWebsiteFeatures.assertContains(js, 'showCodeEditor', 'JS缺少showCodeEditor函數');
 });
 
 // 執行所有測試
