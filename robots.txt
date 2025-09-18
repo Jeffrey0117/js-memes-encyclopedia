@@ -1,0 +1,25 @@
+User-agent: *
+Allow: /
+
+# 優化搜尋引擎索引
+Allow: /memes/
+Allow: /quotes/
+Allow: /docs/
+
+# 網站地圖位置
+Sitemap: https://username.github.io/js-memes-encyclopedia/sitemap.xml
+
+# 避免索引測試和歷史檔案
+Disallow: /tests/
+Disallow: /.history/
+Disallow: /public/
+
+# 針對特定搜尋引擎的最佳化
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+# 抓取延遲（秒）
+Crawl-delay: 1
